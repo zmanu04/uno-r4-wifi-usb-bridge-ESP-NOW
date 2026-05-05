@@ -96,6 +96,7 @@ private:
    void add_cmds_ota();
    void add_cmds_preferences();
    void add_cmds_se();
+   void add_cmds_esp_now();
 public:
    inline void addTask(std::function<void()> task) {
       tasks.push(task);
@@ -113,6 +114,7 @@ public:
    CAtHandler(HardwareSerial *s);
    CAtHandler() = delete ;
    static void onWiFiEvent(WiFiEvent_t event);
+   void send_espnow_recv(const std::vector<uint8_t>& mac, const std::vector<uint8_t>& data);
    void run();
 };
 
