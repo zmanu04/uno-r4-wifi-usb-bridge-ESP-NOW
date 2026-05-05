@@ -13,7 +13,7 @@ IF %ERRORLEVEL% NEQ 0 (
 
 echo Start flashing firmware
 timeout /t 5 /nobreak > NUL
-CALL bin\espflash write-bin -b 115200 0x0 firmware\UNOR4-WIFI-S3-VVERSION.bin
+CALL bin\espflash write-bin -b 115200 0x0 ..\UNOR4USBBridge\build\esp32-patched.esp32.arduino_unor4wifi_usb_bridge\S3-ALL.bin
 
 @pause
 exit /b 0
